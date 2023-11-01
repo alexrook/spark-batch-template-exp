@@ -1,0 +1,5 @@
+/**/target/**
+/.idea/
+/.bsp/
+#fix: skip Coursier windows null directory
+/null/
