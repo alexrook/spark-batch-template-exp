@@ -14,7 +14,14 @@ object MainTemplate extends JobConfigurable {
     val settings                  = readJobSettings
     implicit val formats: Formats = DefaultFormats
     val jsonConfig                = pretty(Extraction.decompose(settings))
-    logger.info(s"Starting job with jobConfig: $jsonConfig")
+    logger.debug(s"Starting job with jobConfig: $jsonConfig")
+
+    logger.error(s"==============ERROR Message========")
+    logger.warn(s"==============WARN Message========")
+    logger.info(s"==============INFO Message========")
+    logger.debug(s"==============DEBUG Message========")
+    logger.trace(s"==============TRACE Message========")
+
     implicit val spark: SparkSession = createSparkSession(settings)
     import spark.implicits._
     spark.sparkContext.parallelize(Seq(1, 2, 3)).toDF.show()

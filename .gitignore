@@ -1,5 +1,30 @@
-/**/target/**
-/.idea/
-/.bsp/
-#fix: skip Coursier windows null directory
-/null/
+# sbt/bsp
+.bsp
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# VSCode
+**metals*
+**bloop*
+**vscode*
+
+# Maven
+target/
+
+*.class
+
+*.log
+
+# datasets docker volume
+app-vol/datasets/imdb/*.tsv
+app-vol/datasets/imdb/*.png
+
+
